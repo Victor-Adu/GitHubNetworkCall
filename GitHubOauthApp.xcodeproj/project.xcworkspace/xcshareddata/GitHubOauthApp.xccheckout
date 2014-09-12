@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>03A08378-4076-49D7-BD89-43F2C8B06EFE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GitHubOauthApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>341602A2F21EEBD1C1A0FA930E01C0F0FEF386D1</key>
+		<string>https://github.com/Victor-Adu/GitHubNetworkCall.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GitHubOauthApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>341602A2F21EEBD1C1A0FA930E01C0F0FEF386D1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Victor-Adu/GitHubNetworkCall.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>341602A2F21EEBD1C1A0FA930E01C0F0FEF386D1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>341602A2F21EEBD1C1A0FA930E01C0F0FEF386D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GitHubOauthApp%20D2:D3</string>
+		</dict>
+	</array>
+</dict>
+</plist>

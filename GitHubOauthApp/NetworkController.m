@@ -257,4 +257,39 @@
     }] resume];
 }
 
+-(void)beginOAuth {
+    self.token = [[NSUserDefaults standardUserDefaults]objectForKey:kGitHubAuthToken];
+    if (!self.token) {
+        NSString *urlString = [NSString stringWithFormat:kGitHubOAuthURL, kGitHubClientID, kGitHubCallbackURI, @"user,repo"];
+        NSLog(@"%@", urlString);
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlString]];
+    } else {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        [configuration setHTTPAdditionalHeaders:@{@"Authorization": [NSString stringWithFormat:@"token %@", self.token]}];
+        self.session = [NSURLSession sessionWithConfiguration:configuration];
+        [self fetchReposUsersFollowers];
+    }
+    
+}
+
+-(void)createRepoWithName:(NSString *)repoName {
+    NSDictionary *post = @{@"name": repoName};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:post options:0 error:nil];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[data length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    [request setURL:[NSURL URLWithString:@"https://api.github.com/user/repos"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"token %@", self.token] forHTTPHeaderField:@"Authorization"];
+    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:data];
+    
+    NSURLResponse *response;
+    NSError *error;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSLog(@"%@", responseData);
+}
+
+
 @end
